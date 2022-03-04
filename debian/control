@@ -1,0 +1,12 @@
+Source: password-manager
+Maintainer: Jeswanth Mukesh <github@jeswanthmukesh20.com>
+Build-Depends: debhelper,dh-python,python3-all,python3-setuptools
+Section: devel
+Priority: optional
+Standards-Version: 3.9.6
+X-Python3-Version: >= 3.6
+
+Package: Password Manager
+Architecture: all
+Description: A simple Password Manager.
+Depends: ${python3:Depends},python3-typer | python3-certifi | python3-setuptools | python3-pytz | python3-pyperclip | python3-pymongo | python3-pycryptodomex | python3-cryptocode | python3-click | xclip | xsel | wl-clipboard

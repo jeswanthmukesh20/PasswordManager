@@ -2,7 +2,7 @@ import os
 import subprocess
 from datetime import datetime
 from getpass import getpass
-import clipboard as clip
+import pyperclip as clip
 import cryptocode
 import pymongo
 import pytz
@@ -11,7 +11,7 @@ import typer
 cluster = pymongo.MongoClient("localhost")
 db = cluster.PasswordManager
 collections = db.PasswordManager
-SECRET_KEY = os.getenv("SECRET_KEY", "shl1206")
+SECRET_KEY = os.getenv("SECRET_KEY", "Password")
 IST = pytz.timezone('Asia/Kolkata')
 
 
