@@ -94,5 +94,28 @@ def update(key: str):
     typer.echo(msg)
 
 
+@app.command()
+def delete(key: str):
+    if is_root():
+        key = collections.find_one({"name": key.lower()})
+        if key is not None:
+            key = key["name"]
+        else:
+            msg = typer.style(f"{key} not found!!", fg=typer.colors.RED, bold=True)
+            typer.echo(msg)
+            raise typer.Abort()
+        action = typer.confirm("Are you sure you want to delete it?")
+        if not action:
+            msg = typer.style("Operation Canceled!!", fg=typer.colors.BRIGHT_BLUE, bold=True)
+            typer.echo(msg)
+            raise typer.Abort()
+        _ = collections.delete_one({"name": key})
+        msg = typer.style("Deleted Successfully!!", fg=typer.colors.CYAN, bold=True)
+        typer.echo(msg)
+    else:
+        msg = typer.style("\n\nAuthentication Failed!", fg=typer.colors.RED, bold=True)
+        typer.echo(msg)
+
+
 if __name__ == "__main__":
     app()
