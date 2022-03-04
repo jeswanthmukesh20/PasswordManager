@@ -1,12 +1,12 @@
+import os
+import subprocess
+from datetime import datetime
+from getpass import getpass
 import clipboard as clip
-import typer
-import os, subprocess
 import cryptocode
 import pymongo
-from datetime import datetime
 import pytz
-from getpass import getpass
-
+import typer
 
 cluster = pymongo.MongoClient("localhost")
 db = cluster.PasswordManager
