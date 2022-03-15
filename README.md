@@ -3,7 +3,10 @@ A simple Python Password Manager CLI application using Typer and MongoDB
 
 
 # Password Manager
-
+**Install dependencies**
+```console
+sudo apt install xclip xsel wl-clipboard
+```
 **Usage**:
 
 ```console
